@@ -1,0 +1,16 @@
+@import 'vendors/bootstrap';
+@import 'base/styles';
+@import 'utils/mixins';
+@import 'utils/variables';
+
+@import 'base/base';
+@import 'base/input-fields';
+@import 'base/buttons';
+@import 'base/typography';
+
+@import 'components/stomach-region-quiz';
+@import 'components/stomach-regions';
+@import 'components/quiz-left';
+@import 'components/quiz-right';
+@import 'components/organ-checkboxes';
+@import 'components/organ-checkbox';

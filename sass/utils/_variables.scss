@@ -1,0 +1,30 @@
+//greys
+$color-grey-light: #f1f1f1;
+$color-grey-light-2: #d7d7d7;
+$color-grey-dark: #333;
+$color-grey-dark-2: #151515;
+
+//black/white
+$color-white: #fff;
+$color-black: #000;
+
+//answers
+$correct: #00a651;
+$incorrect:#dc0000;
+$intro-blue:#008de0;
+
+//colors - stomach regions
+$region-hover-bg:rgb(0,114,188);;
+$region-hover-border: darken(#0072bc, 40%);
+$region-center-dot-bg:$color-grey-light-2;
+$region-center-dot-selected-bg:$correct;
+$region-center-dot-border:darken($color-grey-light-2, 40%);
+
+// FONT
+$default-font-size: 16px;
+//mobile
+$mobile-heading-font-size:$default-font-size; 
+$mobile-font-size:12px;
+//desktop
+$desktop-heading-font-size:20px;
+$desktop-font-size:$default-font-size; 

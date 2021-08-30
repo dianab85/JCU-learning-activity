@@ -1,0 +1,22 @@
+.btn-activity {
+    background:$intro-blue;
+    color:$color-white; 
+    border:none;    
+    padding:5px 15px;
+    margin: 5px 0;
+    border-radius: 20px;
+    font-size:$desktop-font-size;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+
+    &__fixed-bottom {
+        float: right;
+
+        @include respond(tab-port){
+            position: absolute;
+            bottom:20px;
+            right: 100px;
+        }
+    }
+}

@@ -1,0 +1,61 @@
+.organ-checkbox {
+    display: inline-block;
+    margin: 5px 20px 5px 0;
+    position: relative;
+    @include respond(tab-port){
+        font-size:$desktop-font-size;
+    }       
+    &--name {
+        font-size:$mobile-font-size;
+        padding:5px 10px;
+        border:1px solid $color-black;
+        border-radius: 4px;        
+        font-size:$mobile-font-size;
+        position: relative;
+        cursor: pointer;
+    
+        @include respond(tab-port){
+            font-size:$desktop-font-size;
+        }       
+    } 
+    &--input {
+        //visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        &:checked + .organ-checkbox--name__correct{            
+            border:1px solid $correct;      
+        }
+        &:checked + .organ-checkbox--name__correct:after{            
+            content:'\2713';
+            position: absolute;
+            display: block;
+            right:-6px;
+            top:-50%;
+            color:$correct;
+            font-weight: 700;
+            font-size: 10px;
+            padding: 4px 8px; 
+            border-radius: 30px;
+            background: $color-white;
+            border: 1px solid $correct;
+        }
+        &:checked + .organ-checkbox--name__incorrect{            
+            border:1px solid $incorrect;         
+        }
+        &:checked + .organ-checkbox--name__incorrect:after{        
+            position: absolute;
+            display: block;
+            right:-8px;
+            top:-50%;
+            content: "\274c";        
+            color:$incorrect;
+            font-weight: 700;
+            font-size: 7px;
+            padding: 6px 6.5px; 
+            border-radius: 45px;
+            background: $color-white;
+            border: 1px solid $incorrect;
+        }
+       
+    }
+}

@@ -1,0 +1,41 @@
+.secondary-heading {
+    font-size:$mobile-heading-font-size;
+    font-weight:700;
+    margin: 5px 0 10px 0;    
+    color:$color-black;
+
+    @include respond(tab-port){ 
+        font-size:$desktop-heading-font-size;
+        margin: 10px 0 15px 0;    
+    }
+    &__large-center-white {
+        font-size:28px;
+        line-height: 1.5;
+        text-align: center;
+        color:$color-white;
+        position: relative;
+        width: 100%;
+        padding: 10px 0;
+
+        @include respond(tab-port){
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            position: absolute;
+            padding: 0 20px;
+            font-size:38px;
+            line-height: 1.7;
+        }
+    } 
+}
+.input-group label,.input-label, .input-group select {    
+    font-weight: 400;
+    margin: 5px 0;
+    font-size:$mobile-font-size;
+    line-height: 1.6;
+    color:$color-black;
+    
+    @include respond(tab-port){
+        font-size:14px;
+    }
+}

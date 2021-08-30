@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>JCU Quiz</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="dist/css/main.css">
+</head>
+<body>
+    <header></header>
+    <div class="container"> 
+        <div class="stomach-region-quiz" aria-label="Interactive Activity">
+
+             <!-- left section - stomach regions -->
+            <section class="stomach-region-quiz--left">
+                <div class="stomach-region-quiz--left--wrap">
+                    <img src="./image/stomach-regions.jpg" class="stomach-region-quiz--left--bg-img" alt="Anatomical Image of the Stomach Regions and Organs of a Human Body" title="Stomach Regions and Organs of a Human Body">
+                    <nav role="navigation" class="stomach-regions" aria-label="Select one of the nine regions of the stomach">
+                        <a id="region-1" aria-label="the upper left region" href="#region-1" data-key="1" class="stomach-regions--region"><span  data-key="1" class="stomach-regions--region--center" ></span></a>
+                        <a id="region-2" aria-label="the Upper center region​​" href="#region-2" data-key="2" class="stomach-regions--region"><span  data-key="2" class="stomach-regions--region--center" ></span></a>
+                        <a id="region-3" aria-label="the Upper right region​" href="#region-3" data-key="3" class="stomach-regions--region"><span  data-key="3" class="stomach-regions--region--center" ></span></a>
+                        <a id="region-4" aria-label="the Center left region​" href="#region-4" data-key="4" class="stomach-regions--region"><span  data-key="4" class="stomach-regions--region--center" ></span></a>
+                        <a id="region-5" aria-label="the Center center region​" href="#region-5" data-key="5" class="stomach-regions--region"><span  data-key="5" class="stomach-regions--region--center" ></span></a>
+                        <a id="region-6" aria-label="the Center right region​" href="#region-6" data-key="6" class="stomach-regions--region"><span  data-key="6" class="stomach-regions--region--center" ></span></a>
+                        <a id="region-7" aria-label="the Lower left region​" href="#region-7" data-key="7" class="stomach-regions--region"><span  data-key="7" class="stomach-regions--region--center" ></span></a>
+                        <a id="region-8" aria-label="the Lower center region​" href="#region-8" data-key="8" class="stomach-regions--region"><span  data-key="8" class="stomach-regions--region--center" ></span></a>
+                        <a id="region-9" aria-label="the Lower right region​" href="#region-9" data-key="9" class="stomach-regions--region"><span  data-key="9" class="stomach-regions--region--center" ></span></a>
+                    </nav>
+                </div>
+            </section>
+
+            <!-- right section - quiz -->
+            <section class="stomach-region-quiz--right" id="regions-panel" style="display:none;">
+                <div class="stomach-region-quiz--right--wrap">
+
+                    <h2 role="heading" class="secondary-heading" id="region-heading">Center center region</h2>             
+
+                    <!-- Select Region -->
+                    <div class="input-group input-group__block">                       
+                        <label class="input-label input-label__block" for="region">What region is this?</label>
+                        <div class="select-wrap">
+                            <select data-key="1" class="input input--select" name="region" id="region">
+                                <option selected disabled value="0">Select the correct region</option>
+                                <option class="input--select--option" value="8">Hypogastric Region</option>                         
+                                <option class="input--select--option" value="3">Left Hypochondriac Region</option>                           
+                                <option class="input--select--option" value="1">Right Hypochondriac Region</option>
+                                <option class="input--select--option" value="5">Umbilical Region</option>
+                                <option class="input--select--option" value="6">Left Lumbar Region</option>
+                                <option class="input--select--option" value="7">Right Iliac Region</option>
+                                <option class="input--select--option" value="2">Epigastric Region</option>
+                                <option class="input--select--option" value="4">Right Lumber Region</option>
+                                <option class="input--select--option" value="9">Left Iliac Region</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Select Organs -->
+                    <div aria-label="select the organs that belong to this region" class="input-group input-group__block">   
+                        <label class="input-label input-label__block">What organs are in this region? Select all that apply</label>
+                        <div class="organ-checkboxes">
+                            <div class="organ-checkbox">                               
+                                <input aria-checked="false" type="checkbox" id="organ-name-12" data-key="12" class="organ-checkbox--input">
+                                <label for="organ-name-12"  data-key="12" class="organ-checkbox--name">Appendix</label>
+                            </div>
+                            <div class="organ-checkbox">                                
+                                <input aria-checked="false" type="checkbox" id="organ-name-9" data-key="9" class="organ-checkbox--input">
+                                <label for="organ-name-9" data-key="9" class="organ-checkbox--name">Ascending Colon</label>
+                            </div>
+                            <div class="organ-checkbox">                                
+                                <input aria-checked="false" type="checkbox" id="organ-name-15" data-key="15" class="organ-checkbox--input">
+                                <label for="organ-name-15" data-key="15" class="organ-checkbox--name">Bladder</label>
+                            </div>
+                            <div class="organ-checkbox">                                
+                                <input aria-checked="false" type="checkbox" id="organ-name-13" data-key="13" class="organ-checkbox--input">
+                                <label for="organ-name-13" data-key="13" class="organ-checkbox--name">Cecum</label>
+                            </div>
+                            <div class="organ-checkbox">                                
+                                <input aria-checked="false" type="checkbox" id="organ-name-11" data-key="11" class="organ-checkbox--input">
+                                <label for="organ-name-11" data-key="11" class="organ-checkbox--name">Descending colon</label>
+                            </div>
+                            <div class="organ-checkbox">                                
+                                <input aria-checked="false" type="checkbox" id="organ-name-2" data-key="2" class="organ-checkbox--input">
+                                <label for="organ-name-2" data-key="2" class="organ-checkbox--name">Gallblader</label>
+                            </div>
+                            <div class="organ-checkbox">
+                                <input aria-checked="false" type="checkbox" id="organ-name-6" data-key="6" class="organ-checkbox--input">
+                                <label for="organ-name-6" data-key="6" class="organ-checkbox--name">Left Kidney</label>
+                            </div>
+                            <div class="organ-checkbox">
+                                <input aria-checked="false" type="checkbox" id="organ-name-1" data-key="1" class="organ-checkbox--input">
+                                <label for="organ-name-1" data-key="1" class="organ-checkbox--name">Liver</label>
+                            </div>
+                            <div class="organ-checkbox">
+                                <input aria-checked="false" type="checkbox" id="organ-name-5" data-key="5" class="organ-checkbox--input">
+                                <label for="organ-name-5" data-key="5" class="organ-checkbox--name">Pancreas</label>
+                            </div>
+                            <div class="organ-checkbox">
+                                <input aria-checked="false" type="checkbox" id="organ-name-3" data-key="3" class="organ-checkbox--input">
+                                <label for="organ-name-3" data-key="3" class="organ-checkbox--name">Right Kidney</label>
+                            </div>
+                            <div class="organ-checkbox">
+                                <input aria-checked="false" type="checkbox" id="organ-name-14" data-key="14" class="organ-checkbox--input">
+                                <label for="organ-name-14" data-key="14" class="organ-checkbox--name">Sigmoid colon</label>
+                            </div>
+                            <div class="organ-checkbox">
+                                <input aria-checked="false" type="checkbox" id="organ-name-8" data-key="8" class="organ-checkbox--input">
+                                <label for="organ-name-8" data-key="8" class="organ-checkbox--name">Small intestine</label>
+                            </div>
+                            <div class="organ-checkbox">
+                                <input aria-checked="false" type="checkbox" id="organ-name-7" data-key="7" class="organ-checkbox--input">
+                                <label for="organ-name-7" data-key="7" class="organ-checkbox--name">Spleen</label>
+                            </div>
+                            <div class="organ-checkbox">
+                                <input aria-checked="false" type="checkbox" id="organ-name-4" data-key="4" class="organ-checkbox--input">
+                                <label for="organ-name-4" data-key="4" class="organ-checkbox--name">Stomach</label>
+                            </div>
+                            <div class="organ-checkbox">
+                                <input aria-checked="false" type="checkbox" id="organ-name-10" data-key="10" class="organ-checkbox--input">
+                                <label for="organ-name-10" data-key="10" class="organ-checkbox--name">Transverse colon</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+                <div class="section-complete">
+                    Now choose a different region.
+                </div>       
+                <button class="btn-activity btn-activity__fixed-bottom" aria-label="restart quiz" id="restart-quiz">
+                    Restart
+                </button>                
+            </section>
+
+            <section class="stomach-region-quiz--right stomach-region-quiz--right__blue-bg" id="intro-slider" > 
+                <h2 class="secondary-heading secondary-heading__large-center-white">
+                        Click on a region of the abdomen to identify that region and the organs that reside in that region.
+                </h2>
+            </section>
+        </div>
+    </div>
+    <!-- <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>-->
+    <script src="dist/js/main.js"></script>   
+   
+</body>
+</html>
+

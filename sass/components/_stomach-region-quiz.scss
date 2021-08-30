@@ -1,0 +1,13 @@
+.stomach-region-quiz {
+    margin: 20px 0;
+    @include respond(tab-port){
+        @include clearfix();
+    }    
+    border:2px solid $intro-blue;
+
+    .section-complete {
+        color:$correct;
+        font-weight: 600; 
+        visibility: hidden;  
+    }
+}
