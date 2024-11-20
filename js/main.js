@@ -74,20 +74,19 @@
         }
     ]
 
-    //find if the answers are stored in the session and override answersArray
+    //if answers are stored in the session, override answersArray
     if (typeof localStorage.getItem('answersArray') !== 'undefined' && localStorage.getItem('answersArray') !== null) {
         answersArray = JSON.parse(localStorage.getItem('answersArray'));  
      
     }
 
-
     let quizStarted = false,
     currentRegion = document.getElementById('region'),
     completedRegions = [];
 
-    // find out the completed regions in case there was some progress in the activity
+    // update completed regions 
     if (typeof localStorage.getItem('completedRegions') !== 'undefined' && localStorage.getItem('completedRegions') !== null) {
-        completedRegions = JSON.parse(localStorage.getItem('completedRegions'));    
+        completedRegions = JSON.parse(localStorage.getItem('completedRegions'));   
     }
 
     //the nodes
@@ -169,8 +168,7 @@
         let regionAnswer = true,
         organAnswer = true,
         regionID = parseInt(currentRegion.getAttribute('data-key')),        
-        dataKey = parseInt(eventElement.getAttribute('data-key')),
-        i;   
+        dataKey = parseInt(eventElement.getAttribute('data-key'));
 
         if(eventElement.getAttribute('aria-checked')){
             switch(eventElement.getAttribute('aria-checked')){
@@ -225,6 +223,7 @@
         regionsCenterNodeArray.forEach(node => {
             removeClass(node, 'stomach-regions--region--center__complete'); 
         });
+
         completedRegions.forEach(id => { 
             document.querySelector(".stomach-regions--region--center[data-key='"+ id+"']").classList.add('stomach-regions--region--center__complete');
         });    
@@ -232,7 +231,6 @@
         localStorage.setItem('completedRegions',JSON.stringify(completedRegions));
         localStorage.setItem('answersArray',JSON.stringify(answersArray));                                  
     }
-
 
     function revealAnswer(event){  
         addSelectClass();
@@ -274,15 +272,16 @@
     }
 
     function getAnswers(id) {
+
         let storedOrganAnswersArray = answersArray[id - 1].selectedOrgans;
         let storedRegionAnswer = answersArray[id - 1].selectedRegion; 
         
-
         if(storedOrganAnswersArray.length > 0){
             storedOrganAnswersArray.forEach(organId => {
                 document.querySelector(".organ-checkbox--input[data-key='"+ organId+"']").checked = true;
             });        
         }    
+
         if(storedRegionAnswer !== null && storedRegionAnswer !== 0){            
             currentRegion.value = storedRegionAnswer; 
             if(parseInt(currentRegion.value) === id) {
@@ -356,7 +355,7 @@
 
     function updatePanel(event){
 
-        let regionID,organID, targetClick = event.currentTarget, currentRegion = document.getElementById('region');    
+        let regionID, organID, targetClick = event.currentTarget, currentRegion = document.getElementById('region');    
 
         resetRegionClass();
     
@@ -367,7 +366,7 @@
         }else {
             regionID = parseInt(targetClick.getAttribute('data-key'));
         }
-        
+
         if(completedRegions.indexOf(regionID) < 0) {
             document.querySelector('.section-complete').style.visibility = "hidden";
         }else{
