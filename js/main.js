@@ -1,5 +1,12 @@
 (function(){
-    let answersArray = [
+    let answersArray;
+    //if answers are stored in the session, override answersArray
+    if (typeof localStorage.getItem('answersArray') !== 'undefined' && localStorage.getItem('answersArray') !== null) {
+        answersArray = JSON.parse(localStorage.getItem('answersArray'));  
+    }
+
+    if(answersArray === undefined || answersArray === null){
+    answersArray = [
         {
             id:1,
             regionLoc:'Upper left region',
@@ -27,7 +34,7 @@
         {
             id:4,
             regionLoc:'Center left region​',
-            regionName:'Right lumber region​',
+            regionName:'Right lumbar region​',
             organIDs:[1,8,9,3],
             selectedRegion:null,
             selectedOrgans:[]
@@ -73,12 +80,8 @@
             selectedOrgans:[]
         }
     ]
-
-    //if answers are stored in the session, override answersArray
-    if (typeof localStorage.getItem('answersArray') !== 'undefined' && localStorage.getItem('answersArray') !== null) {
-        answersArray = JSON.parse(localStorage.getItem('answersArray'));  
-     
     }
+
 
     let quizStarted = false,
     currentRegion = document.getElementById('region'),
@@ -181,20 +184,21 @@
             }
         }
 
-
-        if(eventElement.classList.contains('input--select')){
-            if(eventElement.value > 0) {
-                answersArray[regionID - 1].selectedRegion = parseInt(eventElement.value);
+        if(event){
+            if(eventElement.classList.contains('input--select')){
+                if(eventElement.value > 0) {
+                    answersArray[regionID - 1].selectedRegion = parseInt(eventElement.value);
+                }
             }
-        }
-        else 
-        {                    
-            if(eventElement.checked === true) {
-                answersArray[regionID - 1].selectedOrgans = removeArrayItem(answersArray[regionID - 1].selectedOrgans, dataKey);
-                answersArray[regionID - 1].selectedOrgans.push(dataKey);
-            } else {
-                answersArray[regionID - 1].selectedOrgans = removeArrayItem(answersArray[regionID - 1].selectedOrgans, dataKey);
-            }        
+            else 
+            {                    
+                if(eventElement.checked === true) {
+                    answersArray[regionID - 1].selectedOrgans = removeArrayItem(answersArray[regionID - 1].selectedOrgans, dataKey);
+                    answersArray[regionID - 1].selectedOrgans.push(dataKey);
+                } else {
+                    answersArray[regionID - 1].selectedOrgans = removeArrayItem(answersArray[regionID - 1].selectedOrgans, dataKey);
+                }        
+            }
         }
         
         if(parseInt(currentRegion.value) === parseInt(currentRegion.getAttribute('data-key'))){
@@ -203,6 +207,7 @@
             regionAnswer = false;
         }
 
+        
         let organArray = answersArray[regionID - 1].organIDs; 
         for (let i = 0; i < organArray.length; i++) { 
             if(document.querySelector(".organ-checkbox--input[data-key='"+ organArray[i]+"']").checked === false){
@@ -210,16 +215,19 @@
                 break;
             }
         }
+        
 
         if(regionAnswer === true && organAnswer === true){
             completedRegions = removeArrayItem(completedRegions,regionID);         
             completedRegions.push(regionID);
             document.querySelector(".section-complete").style.visibility = "visible";            
         }else {
-            completedRegions = removeArrayItem(completedRegions,regionID); 
+            if(event){
+                completedRegions = removeArrayItem(completedRegions,regionID); 
+            }            
             document.querySelector(".section-complete").style.visibility = "hidden";                 
         }
-        
+
         regionsCenterNodeArray.forEach(node => {
             removeClass(node, 'stomach-regions--region--center__complete'); 
         });
@@ -275,7 +283,7 @@
 
         let storedOrganAnswersArray = answersArray[id - 1].selectedOrgans;
         let storedRegionAnswer = answersArray[id - 1].selectedRegion; 
-        
+
         if(storedOrganAnswersArray.length > 0){
             storedOrganAnswersArray.forEach(organId => {
                 document.querySelector(".organ-checkbox--input[data-key='"+ organId+"']").checked = true;
@@ -382,7 +390,7 @@
 
         let regionObj = answersArray[regionID - 1];
         let organsNodeArray = document.querySelectorAll('.organ-checkbox--name');
-    
+
         organsNodeArray.forEach(organInput => {
             organID = parseInt(organInput.getAttribute('data-key'));
             if(regionObj.organIDs.indexOf(organID) < 0){
