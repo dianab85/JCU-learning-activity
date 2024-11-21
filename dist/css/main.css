@@ -5,15 +5,18 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url("https://fonts.googleapis.com/css?family=Anonymous+Pro|Open+Sans:400,600,700");
 html {
-  font-family: sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
+  font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 article,
@@ -1388,7 +1391,6 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857;
   color: #333333;
@@ -7934,7 +7936,7 @@ button.close {
 /* general */
 body {
   color: #333;
-  font-family: 'Open Sans';
+  font-family: "Lexend Deca", sans-serif;
   font-size: 17px;
   line-height: 27px;
 }
@@ -9451,6 +9453,7 @@ pre {
 
 .input-label__block {
   display: block;
+  font-size: 16px;
 }
 
 .input {
@@ -9459,15 +9462,18 @@ pre {
 }
 
 .input--select {
-  border: 1px solid #000;
+  border: 1px solid #5D1F03;
+  -webkit-box-shadow: 0px 0px 9px -2px #5D1F03; 
+  box-shadow: 0px 0px 9px -2px #5D1F03;
   padding: 5px 10px;
   background: transparent;
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
+  -webkit-border-radius: 15px;
+          border-radius: 15px;
 }
 
 .input--select__correct {
   border: 1px solid #00a651;
+  box-shadow: none;
 }
 
 .input--select__incorrect {
@@ -9512,7 +9518,7 @@ pre {
 }
 
 .btn-activity {
-  background: #008de0;
+  background: #2E9A6D;
   color: #fff;
   border: none;
   padding: 5px 15px;
@@ -9523,6 +9529,16 @@ pre {
   font-weight: 700;
   letter-spacing: 0.5px;
   cursor: pointer;
+}
+
+.btn-learn {
+  display: flex;
+  width: fit-content;
+  background: #EC8944;
+  color: #ffffff;
+  border:none;
+  border-radius: 15px;
+  padding:3px 15px
 }
 
 .btn-activity__fixed-bottom {
@@ -9541,7 +9557,7 @@ pre {
   font-size: 16px;
   font-weight: 700;
   margin: 5px 0 10px 0;
-  color: #000;
+  color: #5D1F03;
 }
 
 @media all and (min-width: 48em) {
@@ -9554,46 +9570,46 @@ pre {
 .secondary-heading__large-center-white {
   font-size: 28px;
   line-height: 1.5;
-  text-align: center;
+  text-align: left;
   color: #fff;
   position: relative;
   width: 100%;
   padding: 10px 0;
+  font-weight: 400;
+
 }
 
 @media all and (min-width: 48em) {
   .secondary-heading__large-center-white {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-       -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-         -o-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    position: absolute;
-    padding: 0 20px;
-    font-size: 38px;
-    line-height: 1.7;
+    
+    font-size: 24px;
+    line-height: 1.5;
+    
   }
 }
 
 .input-group label, .input-label, .input-group select {
   font-weight: 400;
   margin: 5px 0;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
-  color: #000;
+  color: #5D1F03;
 }
 
 @media all and (min-width: 48em) {
-  .input-group label, .input-label, .input-group select {
+  .input-group label {
+    font-size: 16px;
+  }
+  .input-group .organ-checkbox--name {
     font-size: 14px;
   }
 }
 
 .stomach-region-quiz {
   margin: 20px 0;
-  border: 2px solid #008de0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 @media all and (min-width: 48em) {
@@ -9602,10 +9618,13 @@ pre {
     display: table;
     clear: both;
   }
+  .stomach-region-quiz {
+    flex-direction: row;
+  }
 }
 
 .stomach-region-quiz .section-complete {
-  color: #00a651;
+  color: #5D1F03;
   font-weight: 600;
   visibility: hidden;
 }
@@ -9632,11 +9651,12 @@ pre {
   position: relative;
   cursor: pointer;
   vertical-align: top;
+  border-radius: 8px;
 }
 
 .stomach-regions--region__active {
-  background: rgba(0, 114, 188, 0.4);
-  border: 1px solid #0071ba;
+  background: rgba(46, 154, 109, 0.4);
+  border: 1px solid #2E9A6D;
 }
 
 .stomach-regions--region--center {
@@ -9651,8 +9671,9 @@ pre {
   width: 13px;
   height: 13px;
   display: block;
-  background: #d7d7d7;
-  border: 1px solid #717171;
+  background: #EC8944;
+  border: 1px solid #b36229;
+  border-radius: 15px;
 }
 
 @media all and (min-width: 20em) {
@@ -9681,8 +9702,8 @@ pre {
 }
 
 .stomach-regions--region:hover, .stomach-regions--region:active, .stomach-regions--region:focus {
-  background: rgba(0, 114, 188, 0.4);
-  border: 1px solid #0071ba;
+  background: rgba(46, 154, 109, 0.4);
+  border: 1px solid #2E9A6D;
 }
 
 .stomach-region-quiz--left {
@@ -9708,15 +9729,18 @@ pre {
 
 @media all and (min-width: 48em) {
   .stomach-region-quiz--left {
-    float: left;
-    width: 34%;
+     width: 34%; 
   }
 }
 
 .stomach-region-quiz--right {
-  background: #f1f1f1;
+  background: #F9E5CD;
+  color:#5D1F03;
   padding: 25px 20px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
 }
 
 .stomach-region-quiz--right::after {
@@ -9727,17 +9751,18 @@ pre {
 
 @media all and (min-width: 48em) {
   .stomach-region-quiz--right {
-    float: right;
-    width: 66%;
+    /* float: right;*/
+    width: 66%; 
     height: 535px;
     padding: 35px 45px;
   }
 }
 
 .stomach-region-quiz--right__blue-bg {
-  background: #008de0;
+  background: #2E9A6D;
   position: relative;
   cursor: pointer;
+  display: flex;
 }
 
 .organ-checkboxes {
@@ -9759,10 +9784,12 @@ pre {
 
 .organ-checkbox--name {
   font-size: 12px;
-  padding: 5px 10px;
-  border: 1px solid #000;
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
+  padding: 4px 10px;
+  border: 1px solid #5D1F03;
+  -webkit-box-shadow: 0px 0px 10px -2px #5D1F03; 
+  box-shadow: 0px 0px 10px -2px #5D1F03;
+  -webkit-border-radius: 15px;
+          border-radius: 15px;
   font-size: 12px;
   position: relative;
   cursor: pointer;
@@ -9781,6 +9808,7 @@ pre {
 
 .organ-checkbox--input:checked + .organ-checkbox--name__correct {
   border: 1px solid #00a651;
+  box-shadow: none;
 }
 
 .organ-checkbox--input:checked + .organ-checkbox--name__correct:after {
@@ -9801,6 +9829,7 @@ pre {
 
 .organ-checkbox--input:checked + .organ-checkbox--name__incorrect {
   border: 1px solid #dc0000;
+  box-shadow: none;
 }
 
 .organ-checkbox--input:checked + .organ-checkbox--name__incorrect:after {

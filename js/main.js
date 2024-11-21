@@ -97,7 +97,6 @@
     regionsNodeArray = document.querySelectorAll('.stomach-regions--region'),
     regionsCenterNodeArray = document.querySelectorAll('span.stomach-regions--region--center'),
     restartBtn = document.getElementById('restart-quiz'),
-    quizWrapper = document.querySelector('.stomach-region-quiz'),
     regionPanel = document.getElementById('regions-panel'),
     checkboxesNodeArray = document.querySelectorAll('.organ-checkbox--input');
 
@@ -339,7 +338,6 @@
         quizStarted = false;
         welcomeMsgEl.style.display = 'block';
         regionPanel.style.display = 'none';
-        quizWrapper.style.border = '0.2rem solid #317dff';
 
         localStorage.setItem('quizStarted', false);   
     }
@@ -355,7 +353,6 @@
             quizStarted = true;
             welcomeMsgEl.style.display = 'none';
             regionPanel.style.display = 'block';
-            quizWrapper.style.border = '0.2rem solid #f1f1f1';
             updatePanel(event);  
         }  
         localStorage.setItem('quizStarted', true);       
