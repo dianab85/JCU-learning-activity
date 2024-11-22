@@ -9549,7 +9549,7 @@ pre {
   .btn-activity__fixed-bottom {
     position: absolute;
     bottom: 20px;
-    right: 100px;
+    right: 20px;
   }
 }
 
@@ -9576,6 +9576,8 @@ pre {
   width: 100%;
   padding: 10px 0;
   font-weight: 400;
+  color:#5D1F03;
+  
 
 }
 
@@ -9610,6 +9612,7 @@ pre {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  
 }
 
 @media all and (min-width: 48em) {
@@ -9758,11 +9761,11 @@ pre {
   }
 }
 
-.stomach-region-quiz--right__blue-bg {
-  background: #2E9A6D;
+.stomach-region-quiz--right__blue-bg {  
   position: relative;
   cursor: pointer;
   display: flex;
+  background-color: #F9E5CD;
 }
 
 .organ-checkboxes {
@@ -9820,7 +9823,7 @@ pre {
   color: #00a651;
   font-weight: 700;
   font-size: 10px;
-  padding: 4px 8px;
+  padding: 6px 10px;
   -webkit-border-radius: 30px;
           border-radius: 30px;
   background: #fff;
