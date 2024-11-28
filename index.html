@@ -24,7 +24,7 @@
             <section class="stomach-region-quiz--left">
                 <div class="stomach-region-quiz--left--wrap">
                     <img src="./image/stomach-regions.jpg" class="stomach-region-quiz--left--bg-img" alt="Anatomical Image of the Stomach Regions and Organs of a Human Body" title="Stomach Regions and Organs of a Human Body">
-                    <nav role="navigation" class="stomach-regions" aria-label="Select one of the nine regions of the stomach">
+                    <nav role="navigation" class="stomach-regions" aria-label="Select one of the nine regions of the stomach" style="display:none">
                         <a id="region-1" aria-label="the upper left region" href="#region-1" data-key="1" class="stomach-regions--region"><span  data-key="1" class="stomach-regions--region--center" ></span></a>
                         <a id="region-2" aria-label="the Upper center region​​" href="#region-2" data-key="2" class="stomach-regions--region"><span  data-key="2" class="stomach-regions--region--center" ></span></a>
                         <a id="region-3" aria-label="the Upper right region​" href="#region-3" data-key="3" class="stomach-regions--region"><span  data-key="3" class="stomach-regions--region--center" ></span></a>
@@ -39,10 +39,10 @@
             </section>
 
             <!-- right section - quiz -->
-            <section class="stomach-region-quiz--right" id="regions-panel" style="display:none;">
+            <section class="stomach-region-quiz--right" id="stomach-regions-quiz" style="display:none;">
                 <div class="stomach-region-quiz--right--wrap">
 
-                    <h2 role="heading" class="secondary-heading" id="region-heading">Center center region</h2>             
+                    <h2 role="heading" class="secondary-heading" id="region-heading">Upper left region</h2>             
 
                     <!-- Select Region -->
                     <div class="input-group input-group__block">                       
@@ -132,17 +132,20 @@
                 </div>   
                 <div class="section-complete">
                     Congrats! You have completed this region.
-                </div>       
+                </div>    
+                <div class="section-remaining-attempts">
+                    Remaining Attempts: <span></span>
+                </div>      
                 <button class="btn-activity btn-activity__fixed-bottom" aria-label="restart quiz" id="restart-quiz">
                     Start again
                 </button>                
             </section>
 
-            <section class="stomach-region-quiz--right stomach-region-quiz--right__blue-bg" id="intro-slider" > 
+            <section class="stomach-region-quiz--right stomach-region-quiz--right__blue-bg" id="login-component" > 
                 <h2 class="secondary-heading secondary-heading__large-center-white">
                     Click on a region of the abdomen to identify that region and the organs that reside in that region.
                 </h2>
-                <button class="btn-learn">Learn</button>
+                <button class="btn-start-quiz">Start Quiz</button>
                 <!-- <form action="POST">
                     <p>
                         Login to start the quiz:

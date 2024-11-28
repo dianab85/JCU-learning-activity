@@ -9461,6 +9461,7 @@ pre {
   background: transparent;
 }
 
+/* stomach quiz */
 .input--select {
   border: 1px solid #5D1F03;
   -webkit-box-shadow: 0px 0px 9px -2px #5D1F03; 
@@ -9531,7 +9532,7 @@ pre {
   cursor: pointer;
 }
 
-.btn-learn {
+.btn-start-quiz {
   display: flex;
   width: fit-content;
   background: #EC8944;
