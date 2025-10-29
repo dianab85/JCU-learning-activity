@@ -1,0 +1,17 @@
+on:
+  push:
+    branches:
+      - production   # deploy only from production branch
+jobs:
+  deploy:
+   runs-on: ubuntu-latest
+   
+   steps:
+   - name: Checkout code
+     uses: actions/checkout@v4
+        
+   - name: Test SSH connection
+     run: |
+        ssh -p ${{ secrets.HOSTINGER_SSH_PORT }} \
+          ${{ secrets.HOSTINGER_SSH_USER }}@${{ secrets.HOSTINGER_SSH_HOST }} \
+          "ls -ld ${{ secrets.HOSTINGER_PATH }}"
