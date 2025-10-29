@@ -29,3 +29,12 @@ jobs:
               ${{ secrets.HOSTINGER_SSH_USER }}@${{ secrets.HOSTINGER_SSH_HOST }} \
               "echo 'SSH connection successful!'"
         continue-on-error: false
+
+        # 3. Deploy files using rsync
+      - name: Deploy via rsync
+        run: |
+          echo "Starting file sync..."
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/id_ed25519 -p ${{ secrets.HOSTINGER_SSH_PORT }} -o StrictHostKeyChecking=no" \
+            ./ ${{ secrets.HOSTINGER_SSH_USER }}@${{ secrets.HOSTINGER_SSH_HOST }}:${{ secrets.HOSTINGER_PATH }}/
+          echo "Deployment complete!"
