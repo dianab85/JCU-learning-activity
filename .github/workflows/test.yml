@@ -1,0 +1,5 @@
+- name: Deploy via rsync
+  run: |
+    rsync -avz --delete \
+      -e "ssh -p ${{ secrets.HOSTINGER_SSH_PORT }}" \
+      ./ ${{ secrets.HOSTINGER_SSH_USER }}@${{ secrets.HOSTINGER_SSH_HOST }}:${{ secrets.HOSTINGER_PATH }}/
