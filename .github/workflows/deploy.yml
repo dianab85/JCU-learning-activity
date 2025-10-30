@@ -17,6 +17,8 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.HOSTINGER_SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519          
           chmod 600 ~/.ssh/id_ed25519
+          echo ${{ secrets.HOSTINGER_SSH_PORT }}
+          echo ${{ secrets.HOSTINGER_SSH_HOST }}
           
           # Add Hostinger server to known_hosts to avoid host verification issues
           ssh-keyscan -p ${{ secrets.HOSTINGER_SSH_PORT }} ${{ secrets.HOSTINGER_SSH_HOST }} >> ~/.ssh/known_hosts          
