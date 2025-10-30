@@ -25,7 +25,7 @@ jobs:
       # 3️⃣ Test SSH connection (optional but useful for debugging)
       - name: Test SSH connection
         run: |
-          cat ~/.ssh/id_rsa          
+          ls -la ~/.ssh          
           ssh -i ~/.ssh/id_rsa -p ${{ secrets.HOSTINGER_SSH_PORT }} \
               -o StrictHostKeyChecking=no \
               ${{ secrets.HOSTINGER_SSH_USER }}@${{ secrets.HOSTINGER_SSH_HOST }} "echo SSH OK"
