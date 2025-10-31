@@ -9851,4 +9851,18 @@ pre {
   border: 1px solid #dc0000;
 }
 
+.credit-link {
+  font-size: 16px;
+  color: #333333;
+  text-decoration: underline;
+  text-decoration-color:#FF4766;
+}
+
+.credit-link:hover {
+  cursor:links;
+  color: #333333;
+  text-decoration: underline;
+  text-decoration-color:#FF4766;
+}
+
 /*# sourceMappingURL=maps/main.css.map */
