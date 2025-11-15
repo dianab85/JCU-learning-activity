@@ -9534,8 +9534,8 @@ pre {
 .btn-learn {
   display: flex;
   width: fit-content;
-  background: #EC8944;
-  color: #ffffff;
+  /* background: #EC8944;
+  color: #ffffff; */
   border:none;
   border-radius: 15px;
   padding:3px 15px
