@@ -96,7 +96,7 @@
     let welcomeMsgEl = document.getElementById('intro-slider'),
     regionsNodeArray = document.querySelectorAll('.stomach-regions--region'),
     regionsCenterNodeArray = document.querySelectorAll('span.stomach-regions--region--center'),
-    restartBtn = document.getElementById('restart-quiz'),
+    //restartBtn = document.getElementById('restart-quiz'),
     regionPanel = document.getElementById('regions-panel'),
     checkboxesNodeArray = document.querySelectorAll('.organ-checkbox--input');
 
@@ -123,11 +123,11 @@
         }    
     });
     
-    if(restartBtn.addEventListener){
-        restartBtn.addEventListener("click", restartQuiz, false);  
-    }else if(restartBtn.attachEvent){
-        restartBtn.attachEvent('onclick', restartQuiz);            
-    }
+    // if(restartBtn.addEventListener){
+    //     restartBtn.addEventListener("click", restartQuiz, false);  
+    // }else if(restartBtn.attachEvent){
+    //     restartBtn.attachEvent('onclick', restartQuiz);            
+    // }
 
     if(currentRegion.addEventListener){
         currentRegion.addEventListener("change", revealAnswer, false);  
@@ -338,6 +338,7 @@
         quizStarted = false;
         welcomeMsgEl.style.display = 'block';
         regionPanel.style.display = 'none';
+        document.querySelector('.section-complete').style.visibility = "hidden";
 
         localStorage.setItem('quizStarted', false);   
     }
